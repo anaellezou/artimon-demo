@@ -1,0 +1,62 @@
+*
+heartRate
+bodyTemp
+glucoseLevel
+hydrationLoss
+flexions
+*
+maxHeartRate = 'double_cst' 187
+heartRateRange[2] heartRate maxHeartRate
+elevatedHeartRate = '>' heartRateRange
+
+minBodyTemp = 'double_cst' 35
+maxBodyTemp = 'double_cst' 39
+lowBodyTempV2[2] bodyTemp minBodyTemp
+highBodyTempV2[2] bodyTemp maxBodyTemp
+tooLowBodyTemp = '<' lowBodyTempV2
+tooHighBodyTemp = '>' highBodyTempV2
+
+minGlucoseLevel = 'double_cst' 50
+maxGlucoseLevel = 'double_cst' 124
+lowGlucoseLevelV2[2] glucoseLevel minGlucoseLevel
+highGlucoseLevelV2[2] glucoseLevel maxGlucoseLevel
+tooLowGlucoseLevel = '<' lowGlucoseLevelV2
+tooHighGlucoseLevel = '>' highGlucoseLevelV2
+
+maxHydrationLoss = 'double_cst' 7
+hydrationLossV2[2] hydrationLoss maxHydrationLoss
+tooHighHydrationLoss = '>' hydrationLossV2
+
+maxFlexions = 'double_cst' 40
+flexionsV2[2] flexions maxFlexions
+tooHighFlexions = '>' flexionsV2
+
+*// hazards & warnings :green (default) - yellow, orange, red
+
+() yellow_HeartRate = Top (G[0, 3] elevatedHeartRate)
+() orange_HeartRate = (G[0, 7] elevatedHeartRate)
+() red_heartRate = G[0, 10] elevatedHeartRate
+
+() yellow_lowBodyTemp = Top (G[0, 3] tooLowBodyTemp)
+() orange_lowBodyTemp = (G[0, 7] tooLowBodyTemp)
+() red_lowBodyTemp = G[0, 10] tooLowBodyTemp
+
+() yellow_highBodyTemp = Top (G[0, 3] tooHighBodyTemp)
+() orange_highBodyTemp = (G[0, 7] tooHighBodyTemp)
+() red_highBodyTemp = G[0, 10] tooHighBodyTemp
+
+() yellow_lowGlucoseLevel = Top (G[0, 3] tooLowGlucoseLevel)
+() orange_lowGlucoseLevel = (G[0, 7] tooLowGlucoseLevel)
+() red_lowGlucoseLevel = G[0, 10] tooLowGlucoseLevel
+
+() yellow_highGlucoseLevel = Top (G[0, 3] tooHighGlucoseLevel)
+() orange_highGlucoseLevel = (G[0, 7] tooHighGlucoseLevel)
+() red_highGlucoseLevel = G[0, 10] tooHighGlucoseLevel
+
+() yellow_highHydrationLoss = Top (G[0, 3] tooHighHydrationLoss)
+() orange_highHydrationLoss = (G[0, 7] tooHighHydrationLoss)
+() red_highHydrationLoss = G[0, 10] tooHighHydrationLoss
+
+() yellow_highFlexions = Top (G[0, 3] tooHighFlexions)
+() orange_highFlexions = (G[0, 7] tooHighFlexions)
+() red_highFlexions = G[0, 10] tooHighFlexions
