@@ -1,0 +1,27 @@
+<html>
+<body>
+ <head>
+  <!--sweetalert-->
+  <script src="C:\Users\anael\Desktop\work\ecran_device\sweetalert-master\dist\sweetalert.min.js"></script>
+  <link rel="stylesheet" href="C:\Users\anael\Desktop\work\ecran_device\sweetalert\dist\sweetalert.css">
+</head>
+
+<button onclick="artimonAlert()">___________________HAZARD DETECTED____________________</button>
+
+<script>
+function hazardButton(){
+	alert('heart rate too damn high');
+}
+
+function artimonAlert() {
+    swal({
+  title: "HAZARD DETECTED",
+  text: "click on hazard for further informations",
+  timer: 2000,
+  showConfirmButton: false
+	});
+}
+</script>
+
+</body>
+</html>
