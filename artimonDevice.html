@@ -1,27 +1,83 @@
 <html>
-<body>
- <head>
-  <!--sweetalert-->
-  <script src="C:\Users\anael\Desktop\work\ecran_device\sweetalert-master\dist\sweetalert.min.js"></script>
-  <link rel="stylesheet" href="C:\Users\anael\Desktop\work\ecran_device\sweetalert\dist\sweetalert.css">
-</head>
+	<body>
+		<script src="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.css">
 
-<button onclick="artimonAlert()">___________________HAZARD DETECTED____________________</button>
+		<button onclick="temperatureHazardButton()"><font color="white">___________________TEMPERATURE HAZARD DETECTED____________________</font></button>
 
-<script>
-function hazardButton(){
-	alert('heart rate too damn high');
+		<button onclick="hydrationHazardButton()"><font color="white">___________________HYDRATION HAZARD DETECTED____________________</font></button>
+
+		<button onclick="heartrateHazardButton()"><font color="white">___________________HEARTRATE HAZARD DETECTED____________________</font></button>
+
+		<button onclick="glucoseHazardButton()"><font color="white">___________________GLUCOSE HAZARD DETECTED____________________</font></button>
+
+		<button onclick="flexionsHazardButton()"><font color="white">___________________FLEXIONS HAZARD DETECTED____________________</font></button>
+
+		<button onclick="oxygenHazardButton()"><font color="white">___________________OXYGEN HAZARD DETECTED____________________</font></button>
+
+		<script>
+<!--temperature hazard button-->
+function temperatureHazardButton(){
+	swal({
+		title: "TEMPERATURE HAZARD",
+		text: "body temperature too high or too low",
+		imageUrl: "https://d30y9cdsu7xlg0.cloudfront.net/png/123960-200.png"
+	});
+}
+
+<!--hydration hazard button-->
+function hydrationHazardButton(){
+	swal({
+		title: "HYDRATION HAZARD",
+		text: "drink water",
+		imageUrl: "https://d30y9cdsu7xlg0.cloudfront.net/png/579466-200.png"
+	});
+}
+
+<!--heartrate hazard button-->
+function heartrateHazardButton(){
+	swal({
+		title: "HEARTRATE HAZARD",
+		text: "heart rate is too damn high",
+		imageUrl: "https://imgflip.com/s/meme/Too-Damn-High.jpg"
+	});
+}
+
+<!--glucose hazard button-->
+function glucoseHazardButton(){
+	swal({
+		title: "GLUCOSE HAZARD",
+		text: "you should eat something",
+		imageUrl: "https://d30y9cdsu7xlg0.cloudfront.net/png/637530-200.png"
+	});
+}
+
+<!--flexions hazard button-->
+function flexionsHazardButton(){
+	swal({
+		title: "FLEXIONS HAZARD",
+		text: "get some rest for a few seconds",
+		imageUrl: "https://d30y9cdsu7xlg0.cloudfront.net/png/560127-200.png"
+	});
+}
+
+<!--oxygen hazard button-->
+function oxygenHazardButton(){
+	swal({
+		title: "OXYGEN HAZARD",
+		text: "you're fucked",
+		imageUrl: "https://d30y9cdsu7xlg0.cloudfront.net/png/702873-200.png"
+	});
 }
 
 function artimonAlert() {
-    swal({
-  title: "HAZARD DETECTED",
-  text: "click on hazard for further informations",
-  timer: 2000,
-  showConfirmButton: false
+	swal({
+		title: "HAZARD DETECTED",
+		text: "click on hazard for further informations",
+		timer: 2000,
+		showConfirmButton: false
 	});
 }
-</script>
-
-</body>
+		</script>
+	</body>
 </html>
