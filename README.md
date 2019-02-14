@@ -1,3 +1,5 @@
 # artimon
 
-- Joystick work with build versions, just not in gameplay
+This is not the final version.
+
+Final version can be found at: https://github.com/dgaitsgo/ARTiMon-demo
